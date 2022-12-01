@@ -1,0 +1,10 @@
+#canvas{
+    background: rgb(169, 169, 169);
+}
+
+.flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
