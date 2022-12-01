@@ -4,7 +4,7 @@ const canvasWidth = 500;
 const canvasHeight = 500;
 
 
-const circleRadius = 20;
+const circleRadius = 15;
 const bigCircleRadius = 250;
 // global circles array
 let circles = [];
@@ -15,23 +15,41 @@ spawned = 0;
 let canSpawn = true;
 const howManyCircles = 50;
 let initialVelocity = { x: 1, y: 1 }
-spawnerDelay = 50;
+spawnerDelay = 200;
 
-
+// nice square... i tried to do circle but i'm not sure how to do it
 const directions = [
-    { x: 1, y: 0 },
-    { x: 0, y: 1 },
+    {x: 0, y: -1},
+    
+    {x: 0.25, y: -1},
+    {x: 0.5, y: -1},
+    {x: 0.75, y: -1},
+
+    {x: 1, y: -1},
+
+    {x: 1.5, y: -1},
+    {x: 1.75, y: -1},
+    {x: 2, y: -1},
+
+    {x: 1, y: 0},
+
+    // {x: 1, y: 0.5},
     // {x: 1, y: 1},
-    // {x: 1, y: -1},
-    // {x: 2, y: 3},
+    // {x: 1, y: 2},
+
+    // {x: 0, y: 1},
+    
+
+
+    // {x: -1, y: 1},
 ]
 
 const getNormalizedVector = (vector) => {
     if(vector.x == 0 || vector.y == 0){
-        return vector
+        return {x: 2*vector.x, y: 2*vector.y}
     }
     mag = Math.sqrt(vector.x * vector.x + vector.y * vector.y)
-    const newVector = {x: vector.x/mag, y: vector.y/mag}
+    const newVector = {x: 2*vector.x/mag, y: 2*vector.y/mag}
     return newVector
 }
 
